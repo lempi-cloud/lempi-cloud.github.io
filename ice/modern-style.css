@@ -1,0 +1,160 @@
+/* Theme Variables */
+
+:root {
+  --primary-color: #458588;       /* Aqua: Used for buttons, TOC panel */
+  --primary-hover: #83a598;       /* Lighter Aqua: Hover effect */
+  --text-color: #ebdbb2;          /* Light Beige: Main text color */
+  --background-color: #282828;    /* Dark Gray: Page background color */
+  --header-text-color: #fabd2f;   /* Yellow: Header (H1) text color */
+  --footer-text-color: #d5c4a1;   /* Light Gray: Footer text color */
+  --panel-text-color: #ebdbb2;    /* Light Beige: Text color inside TOC panel */
+  --panel-hover-color: #fabd2f;   /* Yellow: Hover effect for links in TOC */
+  --box-shadow-color: rgba(0, 0, 0, 0.4); /* Darker Shadow for TOC and images */
+  --content-bg-color: #3c3836;    /* Medium Dark Brown: Content container background */
+}
+
+/* Reset styles */
+body, h1, p, ul, nav, section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* TOC Panel */
+#toc-panel {
+  position: fixed;
+  top: 0;
+  left: -320px; /* Fully off-screen when hidden */
+  width: 300px;
+  height: 100%;
+  background: var(--primary-color);
+  color: var(--panel-text-color);
+  overflow-y: auto;
+  box-shadow: 2px 0 5px var(--box-shadow-color);
+  transition: left 0.3s ease-in-out;
+  padding: 20px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+#toc-panel h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#toc-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+#toc-panel li {
+  margin: 10px 0;
+}
+
+#toc-panel a {
+  text-decoration: none;
+  color: var(--panel-text-color);
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+#toc-panel a:hover {
+  color: var(--panel-hover-color);
+}
+
+/* TOC Toggle Button */
+#toc-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--primary-color);
+  color: var(--panel-text-color);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+  box-shadow: 0 2px 4px var(--box-shadow-color);
+}
+
+#toc-toggle:hover {
+  background: var(--primary-hover);
+}
+
+/* Book Container */
+#book-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: var(--content-bg-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--box-shadow-color);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+header p {
+  color: var(--footer-text-color);
+  font-size: 1.1rem;
+}
+
+#content h1 {
+  font-size: 2rem;
+  color: var(--header-text-color);
+  margin: 30px 0 10px;
+}
+
+#content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: justify;
+  color: var(--text-color);
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: var(--footer-text-color);
+}
+
+#content img {
+  display: block;                /* Makes the image a block element */
+  margin: 20px auto;             /* Centers the image horizontally */
+  max-width: 100%;              /* Limits the maximum width of the image */
+  height: auto;  
+  max-height: 120vh;
+  border-radius: 10px;           /* Adds rounded corners */
+  box-shadow: 0 4px 8px var(--box-shadow-color); /* Adds a shadow for depth */
+}
+
+/* Add spacing (newline effect) between each block element */
+* {
+  margin-bottom: 50px; /* Adds space below each direct child of #content */
+}
+
+/* Optional: Remove extra margin after the last item */
+#content > *:last-child {
+  margin-bottom: 0;
+}
+

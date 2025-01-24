@@ -76,7 +76,7 @@ body {
   left: 20px;
   width: 40px;
   height: 40px;
-  background: var(--primary-color);
+  background: var(--content-bg-color);
   color: var(--panel-text-color);
   border: none;
   border-radius: 50%;
@@ -158,3 +158,114 @@ footer {
   margin-bottom: 0;
 }
 
+
+/* Modal Background */
+#image-modal {
+  display: none;                 /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+  z-index: 2000;                 /* Ensure it appears on top of everything */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Enlarged Image */
+#image-modal img {
+  max-width: 90%;                /* Scale the image down for responsiveness */
+  max-height: 90%;               /* Ensure it fits within the screen */
+  border-radius: 10px;           /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Add depth with a shadow */
+  cursor: pointer;               /* Indicate the image can be clicked to close */
+}
+
+/* Optional: Transition for a smoother effect */
+#image-modal img {
+  transition: transform 0.3s ease-in-out;
+}
+
+#image-modal img:hover {
+  transform: scale(1.15);        /* Slight zoom on hover */
+}
+
+/* Unordered List Styling */
+#content ul {
+  list-style-type: disc;            /* Use disc bullets */
+  margin: 20px 0;                   /* Add space above and below the list */
+  padding-left: 40px;               /* Add indentation for bullets */
+}
+
+/* List Item Styling */
+#content li {
+  font-size: 1.1rem;                /* Slightly larger font for readability */
+  color: var(--text-color);         /* Use the defined text color */
+  margin-bottom: 10px;              /* Add space between list items */
+  line-height: 1.6;                 /* Improve readability with line height */
+}
+
+/* Optional: Hover Effect for List Items */
+#content li:hover {
+  color: var(--primary-color);      /* Change text color on hover */
+  cursor: pointer;                  /* Indicate interactivity (optional) */
+}
+
+/* Nested Lists (Optional) */
+#content ul ul {
+  list-style-type: circle;          /* Use circle bullets for nested lists */
+  margin-top: 10px;                 /* Reduce top margin for nested lists */
+}
+
+#content ul ul li {
+  color: var(--footer-text-color);  /* Subtle text color for nested items */
+}
+
+
+/* Blockquote Styling */
+#content blockquote {
+  font-size: 1.2rem;               /* Larger font for emphasis */
+  font-style: italic;              /* Adds an elegant, emphasized look */
+  color: var(--footer-text-color); /* Subtle text color for quotes */
+  background-color: var(--content-bg-color); /* Light background for contrast */
+  border-left: 4px solid var(--primary-color); /* Left border for visual distinction */
+  margin: 20px 40px;               /* Space around the blockquote */
+  padding: 10px 20px;              /* Inner padding for spacing */
+  border-radius: 8px;              /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Optional: Styling for Blockquote Text Inside */
+#content blockquote p {
+  margin: 0;                       /* Remove default margins in paragraphs */
+}
+
+/* Optional: Attribution Styling */
+#content blockquote footer {
+  text-align: right;               /* Align attribution to the right */
+  font-size: 0.9rem;               /* Smaller font size for attribution */
+  color: var(--primary-hover);     /* Slightly lighter color for attribution */
+  margin-top: 10px;                /* Add space above the attribution */
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('crumpledpaper.png'); /* Path to your texture */
+  background-repeat: repeat;                       /* Repeats the texture */
+  background-size: cover;                          /* Cover the viewport nicely */
+  background-attachment: fixed;                    /* Enables parallax scrolling */
+  background-position: center;                     /* Centers the texture */
+  background-color: #000000;                       /* Fallback color */
+  scroll-behavior: smooth;                         /* Adds smooth scrolling for better effect */
+}
+
+/* Content Styling for Readability */
+#content {
+  background-color: var(--content-bg-color);      /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);        /* Adds a subtle shadow */
+  margin: 20px auto;
+  max-width: 800px;
+  line-height: 1.8;                                /* Improves readability */
+}

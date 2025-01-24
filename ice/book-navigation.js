@@ -3,6 +3,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const tocPanel = document.getElementById('toc-panel');
     const tocList = tocPanel.querySelector('ul');
     const headers = document.querySelectorAll('#content h1');
+
+    // Select all images inside #content
+const images = document.querySelectorAll("#content img");
+
+// Select the modal and the image inside it
+const modal = document.getElementById("image-modal");
+const modalImage = modal.querySelector("img");
+
+// Add click event to each image
+images.forEach((image) => {
+  image.addEventListener("click", () => {
+    modal.style.display = "flex";        // Show the modal
+    modalImage.src = image.src;          // Set the modal image source
+  });
+});
+
+// Add click event to the modal to close it
+modal.addEventListener("click", () => {
+  modal.style.display = "none";          // Hide the modal
+});
+
   
     // Generate the TOC dynamically
     headers.forEach((header, index) => {
